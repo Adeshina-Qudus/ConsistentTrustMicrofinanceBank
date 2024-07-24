@@ -1,5 +1,16 @@
 import {SafeAreaView} from "react-native-safe-area-context";
-import {Text, Clipboard, View, StyleSheet, Image, TouchableOpacity, Alert, Switch, Button} from "react-native";
+import {
+    Text,
+    Clipboard,
+    View,
+    StyleSheet,
+    Image,
+    TouchableOpacity,
+    Alert,
+    Switch,
+    Button,
+    ScrollView
+} from "react-native";
 import image from "../../constants/image"
 import {Link, router} from "expo-router";
 import {useState} from "react";
@@ -21,6 +32,9 @@ const RegularDashboard = ()=>{
 
     const handlePress= () =>{
         router.push("/more")
+    }
+    const handlePressTransact = () =>{
+        router.push("/transactions")
     }
     return (
         <SafeAreaView>
@@ -142,6 +156,46 @@ const RegularDashboard = ()=>{
                         <Text style={Styles.serviceBoxText}>Electricity</Text>
                     </View>
                 </View>
+                <ScrollView>
+                    <View style={Styles.Services}>
+                        <View style={Styles.service}>
+                            <Text style={Styles.recentTrans}>Recent Transactions</Text>
+                        </View>
+                        <View style={Styles.viewAll} >
+                            <TouchableOpacity onPress={handlePressTransact} style={Styles.viallButton}>
+                                <Text style={Styles.viewAllText}>View All</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                    <View style={Styles.details}>
+                        <View style={Styles.transactionOne}>
+                                <Image source={image.Circle} />
+                                <View style={Styles.innerText}>
+                                    <Text style={Styles.name}>Grace Ameh</Text>
+                                    <Text style={Styles.date}>15 Oct 2022, 10:00PM </Text>
+                                </View>
+                        </View>
+                                <View style={Styles.amount}>
+                                    <Text style={Styles.minus}>-10,000</Text>
+                                    <Text style={Styles.balanceLeft}>NGN101,203.94 </Text>
+                                </View>
+                    </View>
+
+                    <View style={Styles.details}>
+                        <View style={Styles.transactionOne}>
+                            <Image source={image.Circle} />
+                            <View style={Styles.innerText}>
+                                <Text style={Styles.name}>Grace Ameh</Text>
+                                <Text style={Styles.date}>15 Oct 2022, 10:00PM </Text>
+                            </View>
+                        </View>
+                        <View style={Styles.amount}>
+                            <Text style={Styles.minus}>-10,000</Text>
+                            <Text style={Styles.balanceLeft}>NGN101,203.94 </Text>
+                        </View>
+                    </View>
+                </ScrollView>
             </View>
         </SafeAreaView>
     );
@@ -386,6 +440,58 @@ const Styles = StyleSheet.create({
         backgroundColor: 'rgba(235, 235, 235, 1)'
 
     },
+    recentTrans : {
+        color: 'rgba(51, 51, 51, 1)',
+        fontFamily: "Mulish",
+        fontSize: 22,
+        fontWeight: 700,
+        lineHeight: 25.1,
+    },
+    transactionOne :{
+        display : "flex",
+        gap : 10,
+        flexDirection : "row"
+    },
+    innerText : {
+        display : "flex",
+        flexDirection : "column",
+        gap : 4
+    },
+    name : {
+        fontFamily: "Mulish",
+        fontSize: 14,
+        fontWeight: 400,
+        lineHeight: 22,
+    },
+    date : {
+        fontFamily: "Mulish",
+        fontSize: 10,
+        fontWeight: 400,
+        lineHeight: 12,
+    },
+    minus :{
+        color : 'rgba(204, 0, 0, 1)',
+        fontFamily: "SF Pro Text",
+        fontSize: 14,
+        fontWeight: 700,
+        lineHeight: 20,
+        marginLeft : 40
+    },
+    balanceLeft : {
+        color: 'rgba(102, 102, 102, 1)',
+        fontFamily: "Mulish",
+        fontSize: 10,
+        fontWeight: 400,
+        lineHeight: 12,
+        marginLeft : 20
+    },
+    details : {
+        display : "flex",
+        flexDirection : "row",
+        justifyContent :"space-between",
+        marginBottom : 20
+    }
+
 
 
 

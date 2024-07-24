@@ -22,11 +22,17 @@ const  TabIcon = ({icon, color, name, focused}) =>{
         const iconName = name === "Post" ? "plus" : "bell";
         return <FontAwesome name={iconName} size={28} color={color}/>
     };
-
     return (
-        <View className={"items-center justify-center gap-2"}>
+        <View style={{ alignItems: "center", justifyContent: "center", paddingVertical: 5 }}>
             {getIcon()}
-            <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-xs`} style={{ color: color }}>
+            <Text
+                style={{
+                    color,
+                    fontSize: 12,
+                    fontWeight: focused ? "bold" : "normal",
+                    marginTop: 4,
+                }}
+            >
                 {name}
             </Text>
         </View>

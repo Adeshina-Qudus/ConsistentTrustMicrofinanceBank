@@ -17,6 +17,7 @@ import Groups from "../assets/images/Group 8113.png"
 import More from "../assets/images/Group 8272.png"
 import Credit from "../assets/images/credit-card.png"
 import MiddleButton from "../assets/images/middleButton.png"
+import Circle from "../assets/images/circle.png"
 export default {
     RegularLevel,
     Regular,
@@ -36,6 +37,7 @@ export default {
     Groups,
     Transaction,
     Credit,
-    MiddleButton
+    MiddleButton,
+    Circle
 
 }
