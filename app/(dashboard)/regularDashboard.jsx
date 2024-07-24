@@ -41,7 +41,7 @@ const RegularDashboard = ()=>{
 
                     <View style={Styles.rightEdge}>
                         <Image source={image.MoonFill} />
-                        <Image source={image.Bell} />
+                        <Image source={image.Notification} />
                     </View>
                 </View>
 
@@ -88,10 +88,63 @@ const RegularDashboard = ()=>{
                     </View>
                     <View style={Styles.viewAll} >
                         <TouchableOpacity onPress={handlePress} style={Styles.viallButton}>
-                            <Text>View All</Text>
+                            <Text style={Styles.viewAllText}>View All</Text>
                         </TouchableOpacity>
                     </View>
+                </View>
 
+                <View style={Styles.avaliableService}>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxSend} >
+                            <Image source={image.SendMoney} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Send Money</Text>
+                    </View>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxRemita} >
+                            <Image source={image.Remita} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Remita</Text>
+                    </View>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxPayBills} >
+                            <Image source={image.PayBills} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Pay Bills</Text>
+                    </View>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxAirtime} >
+                            <Image source={image.Phone} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Airtime</Text>
+                    </View>
+                </View>
+
+                <View style={Styles.avaliableService}>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxLoans} >
+                            <Image source={image.Loans} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Loans</Text>
+                    </View>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxCable} >
+                            <Image source={image.Tv} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Cable TV</Text>
+                    </View>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxInvest} >
+                            <Image source={image.Invest} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Invest</Text>
+                    </View>
+                    <View style={Styles.serviceContainer}>
+                        <View style={Styles.serviceBoxElectricity} >
+                            <Image source={image.Bell} />
+                        </View>
+                        <Text style={Styles.serviceBoxText}>Electricity</Text>
+                    </View>
                 </View>
             </View>
         </SafeAreaView>
@@ -222,9 +275,124 @@ const Styles = StyleSheet.create({
     serviceText : {
         width: 80,
         height: 25,
-        top: 337,
-        left: 20,
-    }
+        fontFamily: "Mulish",
+        fontSize: 21,
+        fontWeight: 700,
+        lineHeight: 25.1,
+        textAlign: "left",
+    },
+    viewAllText :{
+        color: 'rgba(32, 130, 32, 1)',
+        fontFamily: "Mulish",
+        fontSize: 12,
+        fontWeight: 400,
+        lineHeight: 16,
+    },
+    viewAll : {
+        backgroundColor : 'rgba(32, 130, 32, 0.1)',
+        display : "flex",
+        justifyContent : "center",
+        alignItems : 'center',
+        width : 75,
+        borderRadius : 5
+    },
+    avaliableService : {
+      display : "flex",
+        flexDirection : "row",
+        gap : 24,
+        marginTop : 12
+    },
+    serviceBoxSend: {
+        height : 60,
+        width : 63,
+        borderRadius : 10,
+        display : "flex",
+        justifyContent : "center",
+        alignItems : "center",
+        backgroundColor : 'rgba(214, 250, 209, 1)'
+    },
+    serviceContainer : {
+        display : "flex",
+        justifyContent : "center",
+        gap : 5,
+        alignItems : "center"
+    },
+    serviceBoxText : {
+        display : "flex",
+        justifyContent : "center",
+        alignItems : "center",
+        fontFamily: "Mulish",
+        fontSize: 13,
+        fontWeight: 400,
+        lineHeight: 16,
+        color : 'rgba(51, 51, 51, 1)'
+    },
+    serviceBoxRemita : {
+        height : 60,
+        width : 63,
+        borderRadius : 10,
+        display : "flex",
+        justifyContent : "center",
+        alignItems : "center",
+        backgroundColor : 'rgba(249, 231, 219, 1)'
+    },
+    serviceBoxPayBills : {
+        height : 60,
+        width : 63,
+        borderRadius : 10,
+        display : "flex",
+        justifyContent : "center",
+        alignItems : "center",
+        backgroundColor: 'rgba(239, 199, 182, 1)'
+    },
+    serviceBoxAirtime : {
+        height: 60,
+        width: 63,
+        borderRadius: 10,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'rgba(221, 237, 244, 1)',
+    },
+    serviceBoxLoans : {
+        height: 60,
+        width: 63,
+        borderRadius: 10,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'rgba(255, 242, 201, 1)'
+    },serviceBoxInvest : {
+        height: 60,
+        width: 63,
+        borderRadius: 10,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'rgba(221, 237, 244, 1)'
+    },
+    serviceBoxElectricity : {
+        height: 60,
+        width: 63,
+        borderRadius: 10,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: ' rgba(191, 233, 213, 1)'
+    },
+    serviceBoxCable : {
+        height: 60,
+        width: 63,
+        borderRadius: 10,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'rgba(235, 235, 235, 1)'
+
+    },
+
+
+
 });
 
 export default RegularDashboard
