@@ -8,16 +8,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const RegularDashboard = ()=>{
 
-
-    // State to manage the visibility of the balance
     const [balanceVisible, setBalanceVisible] = useState(true);
 
-    // Function to toggle the visibility of the balance
     const toggleBalanceVisibility = () => {
         setBalanceVisible(!balanceVisible);
     };
 
-    // Function to handle copying the account number
     const handleCopyAccountNumber = () => {
         Clipboard.setString('2040011238');
         Alert.alert('Copied!', 'Account number copied to clipboard.');
@@ -256,7 +252,7 @@ const Styles = StyleSheet.create({
         marginTop: 20,
     },
     unionTri: {
-        width: 130,
+        width: 115,
         height: 100,
     },
     allDetail: {
@@ -270,7 +266,7 @@ const Styles = StyleSheet.create({
         display : "flex",
         flexDirection : "row",
         justifyContent : "space-between",
-        marginTop : 60
+        marginTop : 45
     },
     serviceText : {
         width: 80,

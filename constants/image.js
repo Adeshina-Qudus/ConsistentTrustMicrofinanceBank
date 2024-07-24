@@ -12,6 +12,11 @@ import Invest from "../assets/images/line-chart.png"
 import Tv from "../assets/images/tv.png"
 import Loans from "../assets/images/Group 8113.png"
 import Phone from "../assets/images/u_mobile-android.png"
+import Transaction from "../assets/images/u_history.png"
+import Groups from "../assets/images/Group 8113.png"
+import More from "../assets/images/Group 8272.png"
+import Credit from "../assets/images/credit-card.png"
+import MiddleButton from "../assets/images/middleButton.png"
 export default {
     RegularLevel,
     Regular,
@@ -26,6 +31,11 @@ export default {
     Invest,
     Tv,
     Loans,
-    Phone
+    Phone,
+    More,
+    Groups,
+    Transaction,
+    Credit,
+    MiddleButton
 
 }
