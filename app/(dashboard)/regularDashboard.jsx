@@ -91,7 +91,8 @@ const Styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: 400,
         lineHeight: 16,
-        textAlign: "left"
+        textAlign: "left",
+        display
     }
 
 
