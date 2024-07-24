@@ -28,7 +28,7 @@ export default function RootLayout() {
   return (
       <Stack>
         <Stack.Screen name="(auth)/signIn" options={{ headerShown: false }} />
-        <Stack.Screen name="(dashboard)/RegularDashboard" options={{ headerShown: false }} />
+        <Stack.Screen name="(dashboard)/regularDashboard" options={{ headerShown: false }} />
       </Stack>
   );
 }

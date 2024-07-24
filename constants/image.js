@@ -1,0 +1,12 @@
+import RegularLevel from "../assets/images/RegularLevel.png"
+import Regular from  "../assets/images/Regular.png"
+import MoonFill from "../assets/images/moon.fill.png"
+import Bell from "../assets/images/Vector.png"
+
+
+export default {
+    RegularLevel,
+    Regular,
+    MoonFill,
+    Bell
+}
