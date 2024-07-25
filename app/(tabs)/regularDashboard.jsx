@@ -186,13 +186,13 @@ const RegularDashboard = ()=>{
                         <View style={Styles.transactionOne}>
                             <Image source={image.Circle} />
                             <View style={Styles.innerText}>
-                                <Text style={Styles.name}>Grace Ameh</Text>
+                                <Text style={Styles.name}>Mike Oshadami</Text>
                                 <Text style={Styles.date}>15 Oct 2022, 10:00PM </Text>
                             </View>
                         </View>
                         <View style={Styles.amount}>
-                            <Text style={Styles.minus}>-10,000</Text>
-                            <Text style={Styles.balanceLeft}>NGN101,203.94 </Text>
+                            <Text style={Styles.plus}>-45,000</Text>
+                            <Text style={Styles.balanceLeft}>NGN156,203.94 </Text>
                         </View>
                     </View>
                 </ScrollView>
@@ -320,7 +320,7 @@ const Styles = StyleSheet.create({
         display : "flex",
         flexDirection : "row",
         justifyContent : "space-between",
-        marginTop : 45
+        marginTop : 42
     },
     serviceText : {
         width: 80,
@@ -489,12 +489,17 @@ const Styles = StyleSheet.create({
         display : "flex",
         flexDirection : "row",
         justifyContent :"space-between",
-        marginBottom : 20
+        // marginBottom : 10,
+        marginTop :  17,
+    },
+    plus : {
+        color: 'rgba(32, 130, 32, 1)',
+        fontFamily: "SF Pro Text",
+        fontSize: 14,
+        fontWeight: 700,
+        lineHeight: 20,
+        marginLeft : 40
     }
-
-
-
-
 });
 
 export default RegularDashboard
