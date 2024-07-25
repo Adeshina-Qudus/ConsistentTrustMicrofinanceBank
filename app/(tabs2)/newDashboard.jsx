@@ -149,12 +149,10 @@ const NewDashboard = ()=>{
                         <View style={Styles.limit} >
                             <Image source={image.Limit} style={Styles.logo} />
                             <Text style={Styles.name}>Set Account Limit</Text>
-                            <Text style={Styles.balanceLeft}>NGN101,203.94 </Text>
                         </View>
                         <View style={Styles.enable}>
                             <Image source={image.Finger} style={Styles.logo}/>
-                            <Text style={Styles.name}>Set Account Limit</Text>
-                            <Text style={Styles.balanceLeft}>NGN101,203.94 </Text>
+                            <Text style={Styles.name}>Enable your biometrics</Text>
                         </View>
                     </View>
             </View>
