@@ -18,6 +18,9 @@ import More from "../assets/images/Group 8272.png"
 import Credit from "../assets/images/credit-card.png"
 import MiddleButton from "../assets/images/middleButton.png"
 import Circle from "../assets/images/circle.png"
+import Finger from "../assets/images/fingerprint.png"
+import Limit from "../assets/images/limit.png"
+import KYC from "../assets/images/kyc.png"
 export default {
     RegularLevel,
     Regular,
@@ -38,6 +41,9 @@ export default {
     Transaction,
     Credit,
     MiddleButton,
-    Circle
+    Circle,
+    Finger,
+    KYC,
+    Limit
 
 }
