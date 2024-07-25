@@ -55,43 +55,48 @@ const RegularDashboard = ()=>{
                     </View>
                 </View>
 
-                <View style={Styles.BalanceBoard}>
-                    <View style={Styles.allDetail}>
-                        <View style={Styles.details1}>
-                            <Text style={Styles.savings}>Savings Account Balance</Text>
-                            <Text style={Styles.balance}>
-                                {balanceVisible ? 'NGN102,238.71' : '****'}
-                            </Text>
-                            <Text style={Styles.userName}>Adewole Temitope</Text>
-                        </View>
+                <View style={Styles.TopBoard}>
+                    <View style={Styles.BalanceBoard}>
+                        <View style={Styles.allDetail}>
+                            <View style={Styles.details1}>
+                                <Text style={Styles.savings}>Savings Account Balance</Text>
+                                <Text style={Styles.balance}>
+                                    {balanceVisible ? 'NGN102,238.71' : '****'}
+                                </Text>
+                                <Text style={Styles.userName}>Adewole Temitope</Text>
+                            </View>
 
-                        <Image source={image.Union} style={Styles.unionTri} />
-                    </View>
-                    <View style={Styles.copyHide}>
-                        <View style={Styles.acctNumberContainer}>
-                            <Text style={Styles.acctNumber}>2040011238</Text>
-                            <TouchableOpacity onPress={handleCopyAccountNumber}>
-                                <Icon
-                                    name="copy-outline"
-                                    size={20}
-                                    color="white"
-                                    style={Styles.copyIcon}
+                            <Image source={image.Union} style={Styles.unionTri} />
+                        </View>
+                        <View style={Styles.copyHide}>
+                            <View style={Styles.acctNumberContainer}>
+                                <Text style={Styles.acctNumber}>2040011238</Text>
+                                <TouchableOpacity onPress={handleCopyAccountNumber}>
+                                    <Icon
+                                        name="copy-outline"
+                                        size={20}
+                                        color="white"
+                                        style={Styles.copyIcon}
+                                    />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={Styles.hideBalanceContainer}>
+                                <Text style={Styles.hideBalance}>Hide balance</Text>
+                                <Switch
+                                    value={balanceVisible}
+                                    onValueChange={toggleBalanceVisibility}
+                                    trackColor={{ false: '#ffffff', true: '#171515' }}
+                                    thumbColor={balanceVisible ? '#bbaeae' : '#f4f3f4'}
+                                    style={Styles.toggleSwitch}
                                 />
-                            </TouchableOpacity>
+                            </View>
                         </View>
-                        <View style={Styles.hideBalanceContainer}>
-                            <Text style={Styles.hideBalance}>Hide balance</Text>
-                            <Switch
-                                value={balanceVisible}
-                                onValueChange={toggleBalanceVisibility}
-                                trackColor={{ false: '#ffffff', true: '#171515' }}
-                                thumbColor={balanceVisible ? '#bbaeae' : '#f4f3f4'}
-                                style={Styles.toggleSwitch}
-                            />
-                        </View>
+                    </View>
+
+                    <View style={Styles.BesideBoard}>
+                        <Text> </Text>
                     </View>
                 </View>
-
                 <View style={Styles.Services}>
                     <View style={Styles.service}>
                         <Text style={Styles.serviceText}>Services</Text>
@@ -499,6 +504,18 @@ const Styles = StyleSheet.create({
         fontWeight: 700,
         lineHeight: 20,
         marginLeft : 40
+    },
+    BesideBoard : {
+        height : 130,
+        backgroundColor : 'rgba(189, 209, 189, 1)',
+        marginTop : 13,
+        borderRadius : 5,
+        width : 30
+    },
+    TopBoard : {
+        display : "flex",
+        flexDirection : "row",
+        gap : 7
     }
 });
 
