@@ -26,7 +26,7 @@ const SignIn = () => {
             setPasswordError('Password is required');
         } else {
             setPasswordError('');
-            router.push("newDashboard");
+            router.push("regularDashboard");
         }
     };
 
