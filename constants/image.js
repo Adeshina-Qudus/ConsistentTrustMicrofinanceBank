@@ -21,6 +21,9 @@ import Circle from "../assets/images/circle.png"
 import Finger from "../assets/images/fingerprint.png"
 import Limit from "../assets/images/limit.png"
 import KYC from "../assets/images/kyc.png"
+import neLevel from "../assets/images/star.png"
+import NewUser from "../assets/images/Rectangle 17(1).png"
+import Damilare from "../assets/images/Damilare.png"
 export default {
     RegularLevel,
     Regular,
@@ -44,6 +47,9 @@ export default {
     Circle,
     Finger,
     KYC,
-    Limit
+    Limit,
+    neLevel,
+    NewUser,
+    Damilare
 
 }

@@ -1,12 +1,13 @@
+
 import {
     Text,
     TouchableOpacity,
-    StyleSheet, View, Button, TextInput
+    StyleSheet, View, Button, TextInput, Image
 } from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {useEffect, useState} from "react";
 import {router} from "expo-router";
-
+import image from "../../constants/image"
 
 const SignIn = () => {
     const [form, setForm] = useState({
@@ -39,24 +40,12 @@ const SignIn = () => {
         <SafeAreaView>
             <View style={styles.innerContainer}>
                 <Text style={styles.can}>Cancel</Text>
-                <Text style={styles.login}>Login to your account</Text>
+                <Image source={image.Damilare} style={styles.dami}/>
+                <Text style={styles.name}>Damilare,</Text>
                 <Text style={styles.glad}>
-                    We are glad to have you, kindly enter{'\n'}
-                    your login details.
+                    kindly enter your login details.
                 </Text>
-
                 <View style={styles.inputContainer}>
-                    <View>
-                        <Text style={styles.label}>Phone Number*</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="+234 809 531 6411"
-                            placeholderTextColor="rgba(153, 153, 153, 1)"
-                            keyboardType="phone-pad"
-                            value={form.phoneNumber.trim()}
-                            onChangeText={(e) => setForm({ ...form, phoneNumber: e })}
-                        />
-                    </View>
                     <View>
                         <Text style={styles.passwordLabel}>Your Password</Text>
                         <TextInput
@@ -83,7 +72,7 @@ const SignIn = () => {
                 </TouchableOpacity>
 
                 <View style={styles.noAccount}>
-                    <Text style={styles.noAccount}>Don’t have an account? Sign up</Text>
+                    <Text style={styles.noAccount}>Enable biometric Login</Text>
                 </View>
                 <View style={styles.forgot}>
                     <Text style={styles.forgot}>Forgot Password?</Text>
@@ -108,14 +97,14 @@ const styles = StyleSheet.create({
         height: 35,
         marginBottom: 50,
     },
-    login: {
+    name: {
         fontFamily: 'Mulish',
         fontSize: 32,
         fontWeight: 600,
         lineHeight: 34.8,
         textAlign: 'left',
         color: 'rgba(72, 150, 72, 1)',
-        marginBottom: 20,
+        marginTop: 20
     },
     glad: {
         fontFamily: 'Mulish',
@@ -126,7 +115,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.002,
         textAlign: 'left',
         color: 'rgba(102, 102, 102, 1)',
-        marginBottom: 30,
+        marginBottom: 40,
     },
     inputContainer: {
         marginBottom: 40,
@@ -221,6 +210,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    dami : {
+        display : "flex",
+        marginLeft : 110
+    }
 });
 
 export default SignIn;

@@ -41,11 +41,13 @@ const NewDashboard = ()=>{
             <View style={Styles.mainContainer}>
                 <View style={Styles.top}>
                     <View style={Styles.profile}>
-                        <Image source={image.RegularLevel} style={Styles.level} />
-                        <Image source={image.Regular} />
+                        <View style={Styles.level}>
+                            <Image source={image.neLevel}/>
+                        </View>
+                        <Image source={image.NewUser} />
                     </View>
                     <View style={Styles.greetings}>
-                        <Text style={Styles.temi}>Hi, Temitope</Text>
+                        <Text style={Styles.temi}>Hi, Tayo</Text>
                         <Text style={Styles.how}>How you doing today</Text>
                     </View>
 
