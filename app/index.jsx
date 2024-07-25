@@ -1,12 +1,14 @@
+import React, { useState, useEffect } from "react";
 import {
     Text,
     TouchableOpacity,
-    StyleSheet, View, Button, TextInput
+    StyleSheet,
+    View,
+    TextInput,
 } from "react-native";
-import {SafeAreaView} from "react-native-safe-area-context";
-import {useEffect, useState} from "react";
-import {router} from "expo-router";
-
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const SignIn = () => {
     const [form, setForm] = useState({
@@ -16,13 +18,15 @@ const SignIn = () => {
 
     const [isFormFilled, setIsFormFilled] = useState(false);
     const [passwordError, setPasswordError] = useState('');
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const router = useRouter();
 
     const handleLogin = () => {
         if (!form.password.trim()) {
             setPasswordError('Password is required');
         } else {
             setPasswordError('');
-            router.push("newDashboard")
+            router.push("newDashboard");
         }
     };
 
@@ -53,23 +57,36 @@ const SignIn = () => {
                             placeholder="+234 809 531 6411"
                             placeholderTextColor="rgba(153, 153, 153, 1)"
                             keyboardType="phone-pad"
-                            value={form.phoneNumber.trim()}
-                            onChangeText={(e) => setForm({ ...form, phoneNumber: e })}
+                            value={form.phoneNumber}
+                            onChangeText={(e) => setForm((prevForm) => ({ ...prevForm, phoneNumber: e }))}
+                            autoCapitalize="none"
                         />
                     </View>
                     <View>
                         <Text style={styles.passwordLabel}>Your Password</Text>
-                        <TextInput
-                            style={[
-                                styles.input,
-                                passwordError ? styles.inputError : null,
-                            ]}
-                            placeholder="***********"
-                            placeholderTextColor="rgba(153, 153, 153, 1)"
-                            secureTextEntry={true}
-                            value={form.password.trim()}
-                            onChangeText={(e) => setForm({ ...form, password: e })}
-                        />
+                        <View style={styles.passwordContainer}>
+                            <TextInput
+                                style={[
+                                    styles.input,
+                                    passwordError ? styles.inputError : null,
+                                ]}
+                                placeholder="***********"
+                                placeholderTextColor="rgba(153, 153, 153, 1)"
+                                secureTextEntry={!isPasswordVisible}
+                                value={form.password}
+                                onChangeText={(e) => setForm((prevForm) => ({ ...prevForm, password: e }))}
+                            />
+                            <TouchableOpacity
+                                style={styles.iconContainer}
+                                onPress={() => setIsPasswordVisible(!isPasswordVisible)}
+                            >
+                                <Icon
+                                    name={isPasswordVisible ? "eye-slash" : "eye"}
+                                    size={20}
+                                    color="gray"
+                                />
+                            </TouchableOpacity>
+                        </View>
                         {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
                     </View>
                 </View>
@@ -77,16 +94,15 @@ const SignIn = () => {
                 <TouchableOpacity
                     style={[styles.loginButton, !isFormFilled && styles.disabledButton]}
                     onPress={handleLogin}
-                    disabled={!isFormFilled}
                 >
                     <Text style={styles.log}>Login</Text>
                 </TouchableOpacity>
 
                 <View style={styles.noAccount}>
-                    <Text style={styles.noAccount}>Don’t have an account? Sign up</Text>
+                    <Text style={styles.noAccountText}>Don’t have an account? Sign up</Text>
                 </View>
                 <View style={styles.forgot}>
-                    <Text style={styles.forgot}>Forgot Password?</Text>
+                    <Text style={styles.forgotText}>Forgot Password?</Text>
                 </View>
             </View>
         </SafeAreaView>
@@ -111,7 +127,7 @@ const styles = StyleSheet.create({
     login: {
         fontFamily: 'Mulish',
         fontSize: 32,
-        fontWeight: 600,
+        fontWeight: '600',
         lineHeight: 34.8,
         textAlign: 'left',
         color: 'rgba(72, 150, 72, 1)',
@@ -158,6 +174,12 @@ const styles = StyleSheet.create({
         paddingHorizontal: 4,
         zIndex: 1,
     },
+    passwordContainer: {
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
     input: {
         borderWidth: 1,
         borderColor: 'rgba(204, 204, 204, 1)',
@@ -168,6 +190,7 @@ const styles = StyleSheet.create({
         height: 50,
         marginTop: 7,
         backgroundColor: 'white',
+        width : 345
     },
     inputError: {
         borderColor: 'red',
@@ -190,36 +213,46 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     disabledButton: {
-        opacity: 0.6, // Disabled button styling
+        opacity: 0.6,
     },
     log: {
         color: 'white',
         fontFamily: 'Mulish',
         fontSize: 16,
-        fontWeight: 700,
+        fontWeight: '700',
+        lineHeight: 22,
+        textAlign: 'left',
+    },
+    iconContainer: {
+        position: 'absolute',
+        right: 10,
+        top: 15,
+        padding: 5,
+    },
+    noAccountText: {
+        color: 'rgba(72, 150, 72, 1)',
+        fontFamily: 'Mulish',
+        fontSize: 14,
+        fontWeight: '400',
         lineHeight: 22,
         textAlign: 'left',
     },
     noAccount: {
-        color: 'rgba(72, 150, 72, 1)',
-        fontFamily: 'Mulish',
-        fontSize: 14,
-        fontWeight: 400,
-        lineHeight: 22,
-        textAlign: 'left',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
     },
     forgot: {
-        fontFamily: 'Mulish',
-        fontSize: 14,
-        fontWeight: 400,
-        lineHeight: 22,
-        textAlign: 'left',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    forgotText: {
+        fontFamily: 'Mulish',
+        fontSize: 14,
+        fontWeight: '400',
+        lineHeight: 22,
+        textAlign: 'left',
     },
 });
 
